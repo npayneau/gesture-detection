@@ -24,7 +24,7 @@ model.add(Dense(64))
 model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
-model.compile(loss="sparse_categorical_crossentropy", #we could use categorical
+model.compile(loss="binary_crossentropy", #we could use sparse_categorical
             optimizer="adam",
             metrics=['accuracy'])
 
