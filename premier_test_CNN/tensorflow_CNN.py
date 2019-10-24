@@ -4,17 +4,35 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import tensorflow as tf
 import os
+import string
 
 mnist = tf.keras.datasets.mnist
-# Création du dataset d'images
-DATADIR = "./asl-alphabet"
-CATEGORIES = [1:28]
+# Creation du dataset d'images
+DATADIR_TEST = "./asl-alphabet/asl_alphabet_test/asl_alphabet_test/"
+DATADIR_TRAIN = "./asl-alphabet/asl_alphabet_train/asl_alphabet_train/"
+
+CATEGORIES = []
+for i in range(A, Z):
+ CATEGORIES.append(i)
+
 training_data = []
+testing_data = []
+
 IMG_SIZE = 50  #50
+
+def create_test_data():
+    path = os.path.join(DATADIR_TEST, category)
+    for img in os.listdir(path):
+        try :
+            img_array = cv2.imread(os.path.join(path,img), cv2.IMREAD_GRAYSCALE)
+            new_array = cv2.resize(img_array,(IMG_SIZE, IMG_SIZE))
+            testing_data.append([new_array, 1])
+        except Exception as e:
+            pass
 
 def create_traning_data():
     for category in CATEGORIES:
-        path = os.path.join(DATADIR, category)
+        path = os.path.join(DATADIR_TRAIN, category)
         class_num = CATEGORIES.index(category)
         for img in os.listdir(path):
             try :
@@ -25,20 +43,27 @@ def create_traning_data():
                 pass
 
 create_traning_data()
+create_test_data()
 
 #print(len(training_data))
 
 import random
 
 random.shuffle(training_data)
-for sample in training_data[:10]:
-    print(sample[1])
-X = []
-y = []
+#for sample in training_data[:10]:
+#    print(sample[1])
+X_train = []
+y_train = []
+X_test = []
+y_test = []
+
 
 for features, label in training_data:
-    X.append(features)
-    y.append(label)
+    X_train.append(features)
+    y_train.append(label)
+for features, label in testing_data:
+    X_test.append(features)
+    y_test.append(label)
 
 #X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 '''
@@ -57,13 +82,11 @@ X = pickle.load(pickle_in)
 '''
 
 
-# Réseau de neurone & Convolution
+# Reseau de neurone & Convolution
 #(x_train, y_train), (x_test, y_test) = mnist.load_data()
 
-x_train = X
-y_train = y
 
-x_train, x_test = x_train / 255.0, x_test / 255.0
+X_train, X_test = X_train / 255.0, X_test / 255.0
 model = tf.keras.models.Sequential([
   tf.keras.layers.Flatten(input_shape=(28, 28)),
   tf.keras.layers.Dense(128, activation='relu'),
@@ -74,6 +97,6 @@ model = tf.keras.models.Sequential([
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
-              model.fit(x_train, y_train, epochs=5)
+model.fit(X_train, y_train, epochs=5)
 
-model.evaluate(x_test,  y_test, verbose=2)
+model.evaluate(X_test,  y_test, verbose=2)
