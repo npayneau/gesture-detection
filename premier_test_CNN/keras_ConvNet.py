@@ -6,6 +6,8 @@ import pickle
 X = pickle.load(open("X.pickle", "rb"))
 y = pickle.load(open("y.pickle", "rb"))
 
+print(X)
+
 X = X/255.0
 
 model = Sequential()
