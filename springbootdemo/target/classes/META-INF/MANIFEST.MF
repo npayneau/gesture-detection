@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: Theo
+Build-Jdk: 11.0.1
+Implementation-Title: springbootdemo
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: redstapler
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/springbootdemo
+ /
+Created-By: Maven Integration for Eclipse
+
