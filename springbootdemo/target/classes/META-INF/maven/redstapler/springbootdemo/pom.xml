@@ -6,6 +6,21 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springbootdemo</name>
 	<description>Demo project for Spring Boot</description>
+	<properties>
+        <exec.mainClass>Stitching</exec.mainClass>
+    </properties>
+    <repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -13,6 +28,11 @@
 		<version>1.5.2.RELEASE</version>
 	</parent>
 	<dependencies>
+		<dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>opencv-platform</artifactId>
+            <version>4.1.2-1.5.3-SNAPSHOT</version>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

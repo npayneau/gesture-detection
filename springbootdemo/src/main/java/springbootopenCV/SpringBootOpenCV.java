@@ -4,12 +4,13 @@ import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
 import org.springframework.boot.SpringApplication;
- 
+
+
 public class SpringBootOpenCV {
     public static void main(String[] args) {
         // Load Native Library
-        //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-    	nu.pattern.OpenCV.loadLocally();
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        //nu.pattern.OpenCV.loadLocally();
         // image container object
         Mat imageArray = new Mat();
         // Video device acces
