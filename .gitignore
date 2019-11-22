@@ -25,3 +25,4 @@ hs_err_pid*
 # File automaticaly generated in mac
 .idea/workspace.xml
 .DS_Store
+/.metadata/
