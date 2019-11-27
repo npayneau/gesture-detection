@@ -14,19 +14,18 @@ import javax.imageio.ImageIO;
 
 import org.springframework.core.io.Resource;
 
-
-
 public class Run {
 	
 	private static NativeImageLoader imageLoader = new NativeImageLoader(100, 100, 3);
 	
 	public static INDArray recognise(String name) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
-		Resource simpleMlp = new ClassPathResource("/Users/Theo/Documents/GitHub/gesture-detection/Run_Java_WithoutOpenCV/src/main/resources/11-27-19-12h41m55s.h5");
+		Resource simpleMlp = new ClassPathResource("11-27-19-12h41m55s.h5");
 		File simpleMlp_file = simpleMlp.getFile();
 		String simpleMlp_string = simpleMlp_file.getPath();
 		
+		System.out.println(simpleMlp_string);
 		MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp_string);
-		
+		System.out.println("test2");
 		Image picture = ImageIO.read(new File(name));
 		INDArray image = imageLoader.asMatrix(name);
 		//preProcessor.transform(image);
