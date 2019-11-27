@@ -15,7 +15,7 @@ import numpy as np
 import time
 #%% Parameters
 
-xA,yA,xB,yB,drawing,img1,img2 = cim.crop_current_image()
+xA,yA,xB,yB = cim.crop_current_image()
 size = (100,100,3)
 CATEGORIES = ["Poing","Doigt 1","Main Ouverte","2 Doigts","Rien"]
 lookup = pickle.load(open("lookup.pickle", "rb"))

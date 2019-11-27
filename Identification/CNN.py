@@ -1,41 +1,41 @@
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
+from tensorflow.keras import layers
+from tensorflow.keras import models
 import pickle
 import numpy as np
 
-IMG_SIZE = 50  #50
+IMG_SIZE = 100  #50
 
 X_train = pickle.load(open("X_train.pickle", "rb"))
 y_train = pickle.load(open("y_train.pickle", "rb"))
 X_test = pickle.load(open("X_test.pickle", "rb"))
 y_test = pickle.load(open("y_test.pickle", "rb"))
+X_dev = pickle.load(open("X_dev.pickle", "rb"))
+y_dev = pickle.load(open("y_dev.pickle", "rb"))
+lookup = pickle.load(open("lookup.pickle", "rb"))
+reverselookup = pickle.load(open("reverselookup.pickle", "rb"))
 
-X_test = np.array(X_test).reshape(-1, IMG_SIZE, IMG_SIZE)
-X_train = np.array(X_train).reshape(-1, IMG_SIZE, IMG_SIZE)
-y_test = np.array(y_test)
-y_train = np.array(y_train)
 
-print(y_test)
-'''
-mnist = tf.keras.datasets.mnist
-
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-
-print(y_test)
-
-'''
-X_train, X_test = X_train / 255.0, X_test / 255.0
-model = tf.keras.models.Sequential([
-  tf.keras.layers.Flatten(input_shape=(IMG_SIZE, IMG_SIZE)),
-  tf.keras.layers.Dense(128, activation='relu'),
-  tf.keras.layers.Dropout(0.2),
-  tf.keras.layers.Dense(27, activation='softmax')
-])
-
+model=models.Sequential()
+model.add(layers.Conv2D(32, (5, 5), strides=(2,2),activation='relu',input_shape=size))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+model.add(layers.MaxPooling2D((2, 2)))
+model.add(layers.Flatten())
+model.add(layers.Dense(128, activation='relu'))
+model.add(layers.Dense(len(lookup), activation='softmax'))
 model.compile(optimizer='adam',
-              loss='sparse_categorical_crossentropy',
+              loss='categorical_crossentropy',
               metrics=['accuracy'])
-model.fit(X_train, y_train, epochs=5)
 
-model.evaluate(X_test,  y_test, verbose=2)
+configuration = model.summary()
+
+model.fit(X_train, y_train, epochs = 5)
+
+model.evaluate(X_test, y_test, validation_data = (X_dev, y_dev))
+
+model.save('model.h5')
+
+
