@@ -70,7 +70,7 @@ history=model.fit(X_train, y_train, epochs=5, batch_size=16, verbose=1, validati
 now = datetime.now()
 now = now.strftime("%D"+"  %Hh%Mm%Ss").replace('/','-')
 model.save(os.getcwd()+'\\models\\'+str(now)+'.h5')
-model.save(os.getcwd()+'\\model.h5')
+model.save(os.getcwd()+'\\model1.h5')
 plothistory(history)
 
 
