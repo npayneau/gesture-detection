@@ -31,3 +31,5 @@ hs_err_pid*
 /.metadata/
 Identification/CNN.py
 Identification/~$PEE.pptx
+Identification/lookup.pickle
+Identification/reverselookup.pickle

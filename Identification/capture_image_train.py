@@ -28,10 +28,10 @@ now = datetime.now()
 now = now.strftime("%D"+"  %Hh%Mm%Ss").replace('/','-')
 data_source=os.path.join(data_source,now)
 
-def capture(camera=0, resize = False):
+def capture(camera=0, resize = False, temps_de_capture = 20):
     global xA, xB, yA, yB
     cap = cv2.VideoCapture(camera)
-    cap.set(cv2.CAP_PROP_FPS, 5)
+    cap.set(cv2.CAP_PROP_FPS, 30)
     # On Créé un dataset pour chaque geste
     for i in CATEGORIES :
         directory = os.path.join(data_source, i)
@@ -42,7 +42,8 @@ def capture(camera=0, resize = False):
         time.sleep(5)
         start_time = time.time()
         current_time = time.time()
-        while (current_time - start_time)<20:
+        last_time_saved = time.time()
+        while (current_time - start_time) < temps_de_capture:
             ret, frame = cap.read()
             if not ret:
                 break
@@ -58,7 +59,9 @@ def capture(camera=0, resize = False):
 #            img = cv2.resize(img,(size[0],size[1]))
             img = cv2.resize(img, (700,600))
             cv2.imshow("Capturing....", img)
-            cv2.imwrite(os.path.join(directory, str(current_time)+'.jpg'), img=img)
+            if (last_time_saved - time.time())<0.1:
+                cv2.imwrite(os.path.join(directory, str(current_time)+'.jpg'), img=img)
+                last_time_saved = time.time()
             current_time = time.time()
     # When everything done, release the capture
     cap.release()
@@ -67,5 +70,5 @@ def capture(camera=0, resize = False):
 
 #%% Calling the function
 
-capture(camera, True)
+capture(camera, True, 5)
 
