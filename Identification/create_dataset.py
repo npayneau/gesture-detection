@@ -1,95 +1,71 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Nov 13 10:13:27 2019
+Created on Sat Nov  9 10:15:53 2019
 
-@author: thieb
+@author: Jules
+
+Can explore a specified folder (data_source) to create a tensorflow dataset.
+This dataset is saved by pickle
 """
-
-#%% Imports
-import cv2
-import numpy as np
-from tensorflow.keras.utils import to_categorical
 import os
+from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
+import pickle
+import numpy as np
+import cv2
 
-#%%Parameters
-size=(100,100,3)    #Taille de l'image en entrée
+#%% Parameters
+current_path=os.getcwd()
+data_source = os.path.join(current_path,"Dataset")
 
-data_source = r".\asl_alphabet\asl_alphabet_train\asl_alphabet_train"
+charge=1  #Pourcentage d'utilisation des données pour éviter les pbs de mémoire
+nbmaximagespardossier=1000
+extensions=['.png','.jpg']
 
-#data_source = r"C:\Users\thieb\Desktop\Data\2 signs"
+size=(100,100,3)
+#%% Exploring the dataset files
 
-CATEGORIES = ["Poing","Doigt 1","Main Ouverte","2 Doigts","Rien"]
+def ends(file,extensions):
+    for e in extensions:
+        if file.endswith(e):
+            return(True)
+    return(False)
 
-
-datasets=os.listdir()
-
-# Hashmap lookup : keys are the training example"s number and the values are the gestures
-lookup={}
-
-#Hashmap reverselookup : keys are the gestures, the values are the training example's number
-reverselookup={}
-
-X_data = []
-Y_data = []
-count=0
-
-#%%Used Functions
-
-def liste_dossiers(liste):
-    liste_dossiers=[]
-    for elt in liste:
-        if '.' not in elt:
-            liste_dossiers.append(elt)
-    return(liste_dossiers)
-
-#%% Dataset Creation
-
-datasets=os.listdir(data_source)
+data=[]#No data
 
 lookup={}
 reverselookup={}
 
-X_data = []
-Y_data = []
 count=0;
-di=1
+di=int(1/charge)
 
 current_dir=data_source
 #Création de la liste des gestes
-for dataset in datasets:
-    print('Exploring '+dataset)
-    current_dir = data_source+'\\'+dataset
-    dossiers = liste_dossiers(os.listdir(current_dir))
-    for d in dossiers:
-        print('    Exploring '+d)
-        current_dir = data_source+'\\'+dataset+'\\'+d
-        noms_gestes=liste_dossiers(os.listdir(current_dir))
-        for nom_geste in CATEGORIES:
-#            if nom_geste in CATEGORIES :
-            print('        Exploring '+nom_geste)
-            current_dir = data_source+'\\'+dataset+'\\'+d+'\\'+nom_geste
-            if nom_geste not in reverselookup:
-                lookup[count]=nom_geste
-                reverselookup[nom_geste]=count
+data=[]
+for i in os.walk(data_source):
+    if '.' not in i[0] and i[1]==[]:
+        name=i[0].split("\\")[-1]
+        fichiers=i[2][0:nbmaximagespardossier:int(1/charge)]
+        count=0
+        for j in fichiers:
+            if ends(j,extensions):
+                data.append((name,i[0]+'\\'+j))
                 count+=1
-#            n=min(len(fichiers),nbmaximagespardossier)
-            fichiers=os.listdir(current_dir)
-            for img in fichiers:
-                try:
-                    img2=cv2.imread(current_dir+"\\"+img)
-                    img2=cv2.resize(img2,(size[0],size[1]))
-                    X_data.append(img2)
-                    Y_data.append(reverselookup[nom_geste])
-                except:
-                    pass
-
+        if count>0:
+            if name not in reverselookup:
+                indice=len(reverselookup)
+                lookup[indice]=name
+                reverselookup[name]=indice
+X_data=[]
+Y_data=[]
+for y_data,x_data in data:
+    print(x_data)
+    Y_data.append(reverselookup[y_data])
+    X_data.append(cv2.resize(cv2.imread(x_data),(size[0],size[1])))
 
 #%% Reshaping the dataset
 
-
-datacount = len(Y_data)
-print(datacount)
+datacount = len(data)
 
 X_data = np.array(X_data, dtype = 'float32')
 X_data = X_data/255
@@ -102,11 +78,7 @@ Y_data= to_categorical(Y_data)
 x_train,x_further,y_train,y_further = train_test_split(X_data,Y_data,test_size = 0.2)
 x_dev,x_test,y_dev,y_test = train_test_split(x_further,y_further,test_size = 0.5)
 
-
-
 #%% Saving the dataset
-
-import pickle
 
 pickle_out = open("X_test.pickle", "wb")
 pickle.dump(x_test, pickle_out)
