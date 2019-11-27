@@ -10,7 +10,9 @@ from tensorflow.keras.models import load_model
 import cv2
 import numpy as np
 import crop_image as cim
+import powerpoint_api as pw
 import pickle
+
 #%% Parameters
 size=(100,100,3)
 
@@ -50,6 +52,7 @@ def video_predict():
         cv2.putText(img_affichee,geste,(size[0],size[1]),0, 2, (255,0,255),2)
         cv2.imshow("Detection",img_affichee)
         ancien_geste=geste
+        pw.act(ancien_geste,geste)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     cap.release()
