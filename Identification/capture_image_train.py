@@ -70,5 +70,5 @@ def capture(camera=0, resize = False, temps_de_capture = 20):
 
 #%% Calling the function
 
-capture(camera, True, 5)
+capture(camera, True, 20)
 
