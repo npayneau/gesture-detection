@@ -15,7 +15,7 @@ from sklearn.model_selection import train_test_split
 #%%Parameters
 size=(100,100,3)    #Taille de l'image en entrée
 
-data_source = r".\asl_alphabet\asl_alphabet_train\asl_alphabet_train"
+data_source = r".\data"
 
 #data_source = r"C:\Users\thieb\Desktop\Data\2 signs"
 
@@ -139,4 +139,3 @@ pickle_out.close()
 pickle_out = open("reverselookup.pickle","wb")
 pickle.dump(reverselookup, pickle_out)
 pickle_out.close()
-#%%
