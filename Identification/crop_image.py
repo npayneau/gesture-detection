@@ -12,5 +12,4 @@ def crop_current_image(camera=0, resize = False):
     r = cv2.selectROI(img)
     cv2.destroyAllWindows()
     cap.release()
-
     return(int(r[1]), int(r[1] + r[3]), int(r[0]), int(r[0] + r[2]))

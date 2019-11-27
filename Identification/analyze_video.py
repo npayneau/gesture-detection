@@ -20,18 +20,20 @@ model = load_model('model.h5')
 
 lookup = pickle.load(open("lookup.pickle", "rb"))
 
+resize=False
+
 camera=0
 #%% Cropping the image
 
-yA,yB,xA,xB = cim.crop_current_image(camera, True)
+yA,yB,xA,xB = cim.crop_current_image(camera, resize)
 
 #%% Video Capture
 def video_predict(camera=0,resize = False, controller=api.controlPPT):
     cap = cv2.VideoCapture(camera)
+    cap.set(cv2.CAP_PROP_FPS, 30)
     ancien_geste=""
     while(True):
         ret, frame = cap.read()
-        cap.set(cv2.CAP_PROP_FPS, 30)
         if ret:
             if resize:
                 frame = cv2.resize(frame,(1280,1024))
@@ -46,7 +48,6 @@ def video_predict(camera=0,resize = False, controller=api.controlPPT):
 
             img = cv2.resize(img,(size[0],size[1]))
             img = np.array(img)
-
             img2 = img*1.0
             predictions = model.predict(img2.reshape((1,size[0],size[1],size[2])))
             geste=lookup[np.argmax(predictions[0])]
@@ -60,9 +61,11 @@ def video_predict(camera=0,resize = False, controller=api.controlPPT):
             api.act(ancien_geste,geste,controller)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-    cap.release()
     cv2.destroyAllWindows()
+    cap.release()
+    return(None)
+
 
 #%%
 
-video_predict(camera, False, api.controlPPT)
+video_predict(camera, resize, api.controlPPT)
