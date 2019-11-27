@@ -1,12 +1,14 @@
 import cv2
 import numpy as np
 
-def crop_current_image(camera=0):
+def crop_current_image(camera=0, resize = False):
     # Read image
     cap = cv2.VideoCapture(camera)
     ret, frame = cap.read()
+    img = np.copy(frame)
 
-    img = cv2.resize(frame, (1280, 1024))
+    if resize :
+        img = cv2.resize(img, (1280, 1024))
 
     # Select ROI
     r = cv2.selectROI(img)
