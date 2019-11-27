@@ -12,20 +12,27 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import org.springframework.core.io.Resource;
+
+
 
 public class Run {
 	
 	private static NativeImageLoader imageLoader = new NativeImageLoader(100, 100, 3);
 	
 	public static INDArray recognise(String name) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
-		String simpleMlp = new ClassPathResource("src/main/resources/11-27-19-12h41m55s.h5").getFile().getPath();
-		MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp);
+		Resource simpleMlp = new ClassPathResource("/Users/Theo/Documents/GitHub/gesture-detection/Run_Java_WithoutOpenCV/src/main/resources/11-27-19-12h41m55s.h5");
+		File simpleMlp_file = simpleMlp.getFile();
+		String simpleMlp_string = simpleMlp_file.getPath();
+		
+		MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp_string);
 		
 		Image picture = ImageIO.read(new File(name));
-		INDArray image = imageLoader.asMatrix(picture);
+		INDArray image = imageLoader.asMatrix(name);
 		//preProcessor.transform(image);
 		INDArray output = model.output(image);
 		return output;
+		//return 0;
 	}
 	
 	public static void main(String[] args) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
