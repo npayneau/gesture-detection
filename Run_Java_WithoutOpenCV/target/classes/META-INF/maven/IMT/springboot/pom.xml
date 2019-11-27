@@ -6,4 +6,18 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot</name>
 	<description>Project for Spring Boot Run</description>
+	<dependencies>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+   			<groupId>org.springframework</groupId>
+    		<artifactId>spring-core</artifactId>
+    		<version>5.2.0.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-core -->
+		<dependency>
+    		<groupId>org.deeplearning4j</groupId>
+    		<artifactId>deeplearning4j-core</artifactId>
+    		<version>1.0.0-beta5</version>
+		</dependency>	
+	</dependencies>
 </project>
