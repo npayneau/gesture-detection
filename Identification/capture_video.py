@@ -51,8 +51,10 @@ def video_predict():
         img_affichee = cv2.resize(img_affichee,(800,700))    #Affichage pixelisé de l'image
         cv2.putText(img_affichee,geste,(size[0],size[1]),0, 2, (255,0,255),2)
         cv2.imshow("Detection",img_affichee)
+
         ancien_geste=geste
         pw.act(ancien_geste,geste)
+
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     cap.release()

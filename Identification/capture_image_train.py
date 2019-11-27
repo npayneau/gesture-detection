@@ -52,7 +52,7 @@ def capture():
             if xA != xB and yA != yB:
                 img = img[min(yA, yB):max(yA, yB), min(xA, xB):max(xA, xB), :]
 #            img = cv2.resize(img,(size[0],size[1]))
-            img = cv2.resize(img, (1000,1000))
+            img = cv2.resize(img, (700,600))
             cv2.imshow("Capturing....", img)
             cv2.imwrite(os.path.join(directory, str(current_time)+'.jpg'), img=img)
             current_time = time.time()
