@@ -18,7 +18,7 @@ def controle(order):
         window.type_keys("{F5}")
     elif order=="close":
         window.type_keys("{ESC}")
-    return()
+    return(None)
 
 def act(geste,ancien_geste):
     if geste!=ancien_geste:
@@ -28,4 +28,4 @@ def act(geste,ancien_geste):
             controle('close')
         elif geste=="Rien":
             controle('nothing')
-    return()
+    return(None)
