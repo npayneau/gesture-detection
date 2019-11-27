@@ -4,8 +4,6 @@ Created on Wed Nov 27 13:14:45 2019
 
 @author: Jules
 """
-
-
 from pywinauto.application import Application
 
 app = Application()
