@@ -3,8 +3,29 @@ from tensorflow.keras import layers
 from tensorflow.keras import models
 import pickle
 import numpy as np
+from datetime import datetime
 
-IMG_SIZE = 100  #50
+size = (100, 100, 3)
+
+def plothistory(history):
+    # Plot training & validation acc values
+    plt.plot(history.history['acc'])
+    plt.plot(history.history['val_acc'])
+    plt.title('Model accuracy')
+    plt.ylabel('acc')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
+
+    # Plot training & validation loss values
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.title('Model loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
+    return()
 
 X_train = pickle.load(open("X_train.pickle", "rb"))
 y_train = pickle.load(open("y_train.pickle", "rb"))
@@ -32,10 +53,13 @@ model.compile(optimizer='adam',
 
 configuration = model.summary()
 
-model.fit(X_train, y_train, epochs = 5)
+history=model.fit(x_train, y_train, epochs=5, batch_size=16, verbose=1, validation_data=(x_validate, y_validate))
 
-model.evaluate(X_test, y_test, validation_data = (X_dev, y_dev))
+#%% Affichage accuracy
 
-model.save('model.h5')
+now = datetime.now()
+now = now.strftime("%D"+"  %Hh%Mm%Ss").replace('/','-')
+model.save(os.getcwd()+'\\models\\'+str(now)+'.h5')
+plothistory(history)
 
 
