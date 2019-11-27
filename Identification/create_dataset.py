@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 import pickle
 import numpy as np
 import cv2
-
+import progressbar
 #%% Parameters
 current_path=os.getcwd()
 data_source = os.path.join(current_path,"Dataset")
@@ -58,10 +58,15 @@ for i in os.walk(data_source):
                 reverselookup[name]=indice
 X_data=[]
 Y_data=[]
+
+bar = progressbar.ProgressBar(maxval=len(data))
+bar.start()
+i=0
 for y_data,x_data in data:
     Y_data.append(reverselookup[y_data])
     X_data.append(cv2.resize(cv2.imread(x_data),(size[0],size[1])))
-
+    i+=1
+    bar.update(i)
 #%% Reshaping the dataset
 
 datacount = len(data)
