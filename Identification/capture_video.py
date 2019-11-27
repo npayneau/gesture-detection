@@ -19,14 +19,15 @@ size=(100,100,3)
 model = load_model('model.h5')
 
 lookup = pickle.load(open("lookup.pickle", "rb"))
+
+camera=1
 #%% Cropping the image
 
-yA,yB,xA,xB = cim.crop_current_image()
+yA,yB,xA,xB = cim.crop_current_image(camera)
 
 #%% Video Capture
-def video_predict():
-
-    cap = cv2.VideoCapture(0)
+def video_predict(camera=0):
+    cap = cv2.VideoCapture(camera)
     ancien_geste=""
     while(True):
         ret, frame = cap.read()
@@ -65,4 +66,4 @@ def video_predict():
 
 #%%
 
-video_predict()
+video_predict(camera)

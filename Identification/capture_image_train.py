@@ -13,26 +13,29 @@ import pickle
 import os
 import numpy as np
 import time
-#%% Parameters
+from datetime import datetime
 
-yA, yB, xA, xB = cim.crop_current_image()
+#%% Parameters
+camera=1
+yA, yB, xA, xB = cim.crop_current_image(camera)
 size = (100, 100, 3)
 lookup = pickle.load(open("lookup.pickle", "rb"))
 CATEGORIES = list(lookup.values())
 reverselookup = pickle.load(open("reverselookup.pickle", "rb"))
 current_path = os.getcwd()
 data_source = os.path.join(current_path, "Dataset")
-data_source = os.path.join(data_source, "Nous")
-data_source = os.path.join(data_source, "Kevin")
+now = datetime.now()
+now = now.strftime("%D"+"  %Hh%Mm%Ss").replace('/','-')
+data_source=os.path.join(data_source,now)
 
-def capture(camera):
+def capture(camera=0):
     global xA, xB, yA, yB
     cap = cv2.VideoCapture(camera)
     cnt = 0
     # On Créé un dataset pour chaque geste
     for i in CATEGORIES :
-        directory = data_source + '\\' + i
-        if i not in os.listdir(data_source):
+        directory = os.path.join(data_source, i)
+        if not os.path.exists(directory):
             os.makedirs(directory)
         print("Prepare yourself to do the gesture " + i + "...")
         print("Start is in 5 seconds")
@@ -63,4 +66,5 @@ def capture(camera):
 
 #%% Calling the function
 
-capture(0)
+capture(camera)
+
