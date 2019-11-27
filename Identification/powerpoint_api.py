@@ -5,15 +5,38 @@ Created on Wed Nov 27 13:14:45 2019
 @author: Jules
 """
 from pywinauto.application import Application
+import pywinauto.keyboard as kb
 import time
+import pyautogui as pag
+#app = Application()
+#app.connect(path=r"C:\Program Files (x86)\Microsoft Office\root\Office16\POWERPNT.EXE")
 
-app = Application()
-app.connect(path=r"C:\Program Files (x86)\Microsoft Office\root\Office16\POWERPNT.EXE")
+#print(app.windows())
+# app.connect(path=r"C:\Users\Jules\AppData\Roaming\Spotify\Spotify.exe")
+# print(app.windows())
 # describe the window inside NoteUntitledNotepad.exe process
-window = app.top_window()
+#window = app.top_window()
 last_acted=time.time()
 
-def controle(order):
+def controlPlayer(order):
+    # global app
+    # window = app.top_window()
+    print(order)
+    if order=='open':
+        pag.press("playpause")
+    elif order=="close":
+        pag.press("volumemute")
+#    elif order=="rien":
+#        print("Rien")
+    elif order=="next":
+        pag.press("nexttrack")
+    elif order=="previous":
+        pag.press("prevtrack")
+    elif order=='blur':
+        pag.press("volumedown")
+    return(None)
+
+def controlPPT(order):
     global app
     window = app.top_window()
     print(order)
@@ -21,31 +44,28 @@ def controle(order):
         window.type_keys("{F5}")
     elif order=="close":
         window.type_keys("{ESC}")
-#    elif order=="rien":
-#        print("Rien")
     elif order=="next":
-        window.type_keys("{UP}")
-    elif order=="previous":
         window.type_keys("{DOWN}")
+    elif order=="previous":
+        window.type_keys("{UP}")
     elif order=='blur':
-        window.type_keys("B")
+        window.type_keys("b")
     return(None)
 
-def act(geste,ancien_geste):
+def act(geste,ancien_geste,controller=controlPPT):
     global last_acted
-    if time.time()-last_acted>2 or ancien_geste=="Rien" or geste=="Rien":
+    if time.time()-last_acted>1 or ancien_geste=="Rien" or geste=="Rien":
         last_acted=time.time()
         if geste=='Main Ouverte':
-            controle('open')
+            controller('open')
         elif geste=='Poing':
-            #controle('close')
-            print("stop")
+            controller('close')
         elif geste=="Rien":
-            controle('rien')
+            controller('rien')
         elif geste=="Doigt 1":
-            controle("next")
+            controller("next")
         elif geste=="Pouce Haut":
-            controle("previous")
+            controller("previous")
         elif geste=="2 Doigts":
-            controle('blur')
+            controller('blur')
     return(None)

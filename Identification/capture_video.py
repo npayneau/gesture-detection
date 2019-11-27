@@ -20,7 +20,7 @@ model = load_model('model.h5')
 
 lookup = pickle.load(open("lookup.pickle", "rb"))
 
-camera=1
+camera=0
 #%% Cropping the image
 
 yA,yB,xA,xB = cim.crop_current_image(camera, True)
@@ -57,7 +57,7 @@ def video_predict(camera=0,resize = False):
             cv2.imshow("Detection",img_affichee)
 
             ancien_geste=geste
-            pw.act(ancien_geste,geste)
+            pw.act(ancien_geste,geste,controller=pw.controlPlayer)
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
