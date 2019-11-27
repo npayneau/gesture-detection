@@ -31,7 +31,7 @@ data_source=os.path.join(data_source,now)
 def capture(camera=0, resize = False):
     global xA, xB, yA, yB
     cap = cv2.VideoCapture(camera)
-    cnt = 0
+    cap.set(cv2.CAP_PROP_FPS, 5)
     # On Créé un dataset pour chaque geste
     for i in CATEGORIES :
         directory = os.path.join(data_source, i)
