@@ -25,6 +25,7 @@ public class Run {
 		
 		System.out.println(simpleMlp_string);
 		MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(simpleMlp_string);
+		// Convert
 		System.out.println("test2");
 		Image picture = ImageIO.read(new File(name));
 		INDArray image = imageLoader.asMatrix(name);
