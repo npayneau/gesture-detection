@@ -59,13 +59,15 @@ for i in os.walk(data_source):
                 reverselookup[name]=indice
 X_data=[]
 Y_data=[]
-cnt = 0
+
 bar = progressbar.ProgressBar(maxval=len(data))
+bar.start()
+i=0
 for y_data,x_data in data:
     Y_data.append(reverselookup[y_data])
     X_data.append(cv2.resize(cv2.imread(x_data),(size[0],size[1])))
-    bar.update(cnt)
-    cnt+=1
+    i+=1
+    bar.update(i)
 
 #%% Reshaping the dataset
 

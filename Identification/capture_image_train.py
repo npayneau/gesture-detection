@@ -64,4 +64,3 @@ def capture():
 #%% Calling the function
 
 capture()
-

@@ -5,8 +5,32 @@ from tensorflow.keras.models import load_model
 import pickle
 import os
 import numpy as np
+from datetime import datetime
+import  matplotlib.pyplot as plt
 
-size = (100, 100, 3)  #50
+
+size = (100, 100, 3)
+
+def plothistory(history):
+    # Plot training & validation acc values
+    plt.plot(history.history['acc'])
+    plt.plot(history.history['val_acc'])
+    plt.title('Model accuracy')
+    plt.ylabel('acc')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
+
+    # Plot training & validation loss values
+    plt.plot(history.history['loss'])
+    plt.plot(history.history['val_loss'])
+    plt.title('Model loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.show()
+    return()
+
 
 X_train = pickle.load(open("X_train.pickle", "rb"))
 y_train = pickle.load(open("y_train.pickle", "rb"))
@@ -37,10 +61,16 @@ if not os.path.exists('model.h5'):
 else:
     model = load_model('model.h5')
 
-model.fit(X_train, y_train, batch_size=16, validation_data=(X_dev, y_dev), epochs=10)
+configuration = model.summary()
 
-print(model.evaluate(X_test, y_test))
+history=model.fit(X_train, y_train, epochs=5, batch_size=16, verbose=1, validation_data=(X_dev, y_dev))
 
-model.save('model.h5')
+#%% Affichage accuracy
+
+now = datetime.now()
+now = now.strftime("%D"+"  %Hh%Mm%Ss").replace('/','-')
+model.save(os.getcwd()+'\\models\\'+str(now)+'.h5')
+model.save(os.getcwd()+'\\model.h5')
+plothistory(history)
 
 
