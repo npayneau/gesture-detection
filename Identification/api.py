@@ -8,19 +8,17 @@ from pywinauto.application import Application
 import pywinauto.keyboard as kb
 import time
 import pyautogui as pag
-#app = Application()
-#app.connect(path=r"C:\Program Files (x86)\Microsoft Office\root\Office16\POWERPNT.EXE")
 
-#print(app.windows())
-# app.connect(path=r"C:\Users\Jules\AppData\Roaming\Spotify\Spotify.exe")
-# print(app.windows())
-# describe the window inside NoteUntitledNotepad.exe process
-#window = app.top_window()
+first_call=True
+app=None
+
 last_acted=time.time()
 
 def controlPlayer(order):
-    # global app
-    # window = app.top_window()
+    global first_call
+    if first_call:
+        app=None
+        first_call=False
     print(order)
     if order=='open':
         pag.press("playpause")
@@ -37,8 +35,16 @@ def controlPlayer(order):
     return(None)
 
 def controlPPT(order):
-    global app
-    window = app.top_window()
+    global first_call,app
+    if first_call:
+        app = Application()
+        app.connect(path=r"C:\Program Files (x86)\Microsoft Office\root\Office16\POWERPNT.EXE")
+        # print(app.windows())
+        # describe the window inside NoteUntitledNotepad.exe process
+        window = app.top_window()
+        first_call=False
+    else:
+        window = app.top_window()
     print(order)
     if order=='open':
         window.type_keys("{F5}")
