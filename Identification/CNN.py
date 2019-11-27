@@ -37,9 +37,9 @@ if not os.path.exists('model.h5'):
 else:
     model = load_model('model.h5')
 
-model.fit(X_train, y_train,validation_data=(X_dev, y_dev), epochs=10)
+model.fit(X_train, y_train, batch_size=16, validation_data=(X_dev, y_dev), epochs=10)
 
-model.evaluate(X_test, y_test)
+print(model.evaluate(X_test, y_test))
 
 model.save('model.h5')
 
