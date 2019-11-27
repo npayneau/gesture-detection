@@ -15,20 +15,23 @@ import numpy as np
 import time
 #%% Parameters
 
-xA,yA,xB,yB = cim.crop_current_image()
+yA,yB,xA,xB = cim.crop_current_image()
 size = (100,100,3)
 CATEGORIES = ["Poing","Doigt 1","Main Ouverte","2 Doigts","Rien"]
 lookup = pickle.load(open("lookup.pickle", "rb"))
 reverselookup = pickle.load(open("reverselookup.pickle", "rb"))
-#directory = r"C:\IMTA\neuronal\gesture-detection\premier_test_CNN\asl_alphabet\asl_alphabet_train\asl_alphabet_train\dataset\Source 1"
-os.chdir(directory)
+current_path = os.getcwd()
+data_source = os.path.join(current_path,"Dataset")
+data_source = os.path.join(data_source,"Nous")
+data_source = os.path.join(data_source,"Kevin")
 
 def capture():
-    global xA,xB,yA,yB,drawing
+    global xA, xB, yA, yB
     cap = cv2.VideoCapture(0)
     cnt = 0
+    # On Créé un dataset pour chaque geste
     for i in CATEGORIES :
-        directory = r"C:\IMTA\neuronal\gesture-detection\premier_test_CNN\asl_alphabet\asl_alphabet_train\asl_alphabet_train\dataset\Source 2" + '\\' + i
+        directory = data_source + '\\' + i
         os.chdir(directory)
         print("Prepare yourself to do the gesture " + i + "...")
         print("Start is in 5 seconds")

@@ -59,7 +59,6 @@ for i in os.walk(data_source):
 X_data=[]
 Y_data=[]
 for y_data,x_data in data:
-    print(x_data)
     Y_data.append(reverselookup[y_data])
     X_data.append(cv2.resize(cv2.imread(x_data),(size[0],size[1])))
 
