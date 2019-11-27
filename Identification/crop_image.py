@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def crop_current_image(camera):
+def crop_current_image(camera=0):
     # Read image
     cap = cv2.VideoCapture(camera)
     ret, frame = cap.read()
