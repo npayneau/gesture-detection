@@ -16,6 +16,7 @@ import time
 from datetime import datetime
 
 #%% Parameters
+
 camera = 0
 yA, yB, xA, xB = cim.crop_current_image(camera, True)
 size = (100, 100, 3)
@@ -27,6 +28,8 @@ data_source = os.path.join(current_path, "Dataset")
 now = datetime.now()
 now = now.strftime("%D"+"  %Hh%Mm%Ss").replace('/','-')
 data_source=os.path.join(data_source,now)
+
+#%% Main function
 
 def capture(camera=0, resize = False, temps_de_capture = 20):
     global xA, xB, yA, yB
@@ -67,8 +70,7 @@ def capture(camera=0, resize = False, temps_de_capture = 20):
     cap.release()
     cv2.destroyAllWindows()
 
-
 #%% Calling the function
 
-capture(camera, True, 20)
+capture(camera, False, 20)
 

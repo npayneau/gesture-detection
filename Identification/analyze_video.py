@@ -57,7 +57,7 @@ def video_predict(camera=0,resize = False, controller=api.controlPPT):
             cv2.imshow("Detection",img_affichee)
 
             ancien_geste=geste
-            pw.act(ancien_geste,geste,controller)
+            api.act(ancien_geste,geste,controller)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
     cap.release()
@@ -65,4 +65,4 @@ def video_predict(camera=0,resize = False, controller=api.controlPPT):
 
 #%%
 
-video_predict(camera, True, api.controlPPT)
+video_predict(camera, False, api.controlPPT)
