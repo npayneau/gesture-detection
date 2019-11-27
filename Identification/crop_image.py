@@ -6,7 +6,7 @@ def crop_current_image(camera=0):
     cap = cv2.VideoCapture(camera)
     ret, frame = cap.read()
 
-    img = cv2.resize(frame, (1280, 1024))
+    img=frame
 
     # Select ROI
     r = cv2.selectROI(img)
