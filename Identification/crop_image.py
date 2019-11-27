@@ -6,8 +6,11 @@ def crop_current_image():
     cap = cv2.VideoCapture(0)
     ret, frame = cap.read()
 
+    img = cv2.resize(frame, (1280, 1024))
+
     # Select ROI
-    r = cv2.selectROI(frame)
+    r = cv2.selectROI(img)
+
 
     cv2.destroyAllWindows()
     cap.release()

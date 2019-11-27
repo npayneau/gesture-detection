@@ -25,9 +25,9 @@ data_source = os.path.join(current_path, "Dataset")
 data_source = os.path.join(data_source, "Nous")
 data_source = os.path.join(data_source, "Kevin")
 
-def capture():
+def capture(camera):
     global xA, xB, yA, yB
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(camera)
     cnt = 0
     # On Créé un dataset pour chaque geste
     for i in CATEGORIES :
@@ -63,4 +63,4 @@ def capture():
 
 #%% Calling the function
 
-capture()
+capture(0)
