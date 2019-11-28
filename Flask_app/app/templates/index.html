@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Application Base</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+  <div class="titre">
+    <h1> Reconnaissance Gestuelle</h1>
+    <p> Description Projet </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
+  <div class="block1">
+
+    <div class="video_box">
+      <h1>Affichage Flux Video</h1>
+      <div class="flux">
+        <img src="video_feed">
+      </div>
+      <div class="instructions">
+        <h1>Instructions</h1>
+        <p>instruction</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="block2">
+    <div class="action">
+      <h1> Actions/ IOT</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="test">
+
+        <table>
+          <tr>
+            <td></td>
+            <td>
+              <button onclick="document.getElementById('myImageTop').src='{{ url_for('static', filename='images/pic_bulbon.gif') }}'">1</button>
+              <img id="myImageTop" src={{ url_for('static', filename='images/pic_bulbon.gif') }}>
+              <button onclick="document.getElementById('myImageTop').src='{{ url_for('static', filename='images/pic_bulboff.gif') }}'">2</button>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <button onclick="document.getElementById('myImageLeft').src='{{ url_for('static', filename='images/pic_bulbon.gif') }}'">1</button>
+              <img id="myImageLeft" src={{ url_for('static', filename='images/pic_bulbon.gif') }}>
+              <button onclick="document.getElementById('myImageLeft').src='{{ url_for('static', filename='images/pic_bulboff.gif') }}'">2</button>
+            </td>
+            <td></td>
+            <td>
+              <button onclick="document.getElementById('myImageRight').src='{{ url_for('static', filename='images/pic_bulbon.gif') }}'">1</button>
+              <img id="myImageRight" src={{ url_for('static', filename='images/pic_bulbon.gif') }}>
+              <button onclick="document.getElementById('myImageRight').src='{{ url_for('static', filename='images/pic_bulboff.gif') }}'">2</button>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button onclick="document.getElementById('myImageBottom').src='{{ url_for('static', filename='images/pic_bulbon.gif') }}'">1</button>
+              <img id="myImageBottom" src={{ url_for('static', filename='images/pic_bulbon.gif') }}>
+              <button onclick="document.getElementById('myImageBottom').src='{{ url_for('static', filename='images/pic_bulboff.gif') }}'">2</button>
+            </td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+  </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
