@@ -59,11 +59,11 @@ if not os.path.exists('model.h5'):
     configuration = model.summary()
 
 else:
-    model = load_model('model.h5')
+    model = load_model('model1.h5')
 
 configuration = model.summary()
 
-history=model.fit(X_train, y_train, epochs=5, batch_size=16, verbose=1, validation_data=(X_dev, y_dev))
+history=model.fit(X_train, y_train, epochs=10, batch_size=1024, verbose=1, validation_data=(X_dev, y_dev))
 
 #%% Affichage accuracy
 

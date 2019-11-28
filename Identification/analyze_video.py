@@ -16,11 +16,11 @@ import pickle
 #%% Parameters
 size=(100,100,3)
 
-model = load_model('model.h5')
+model = load_model('model1.h5')
 
 lookup = pickle.load(open("lookup.pickle", "rb"))
 
-resize=False
+resize=True
 
 camera=0
 #%% Cropping the image

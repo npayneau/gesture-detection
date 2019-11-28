@@ -55,7 +55,7 @@ def controlPPT(order):
     elif order=="previous":
         window.type_keys("{UP}")
     elif order=='blur':
-        window.type_keys("b")
+        pag.press("b")
     return(None)
 
 def act(geste,ancien_geste,controller=controlPPT):
