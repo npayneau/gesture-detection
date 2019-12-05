@@ -1,11 +1,11 @@
-from flask import Flask, render_template, url_for, Response,request
+from flask import Flask, render_template, Response, request
 from video import Video
 
 app = Flask(__name__)
 vid=Video(0)
 
 geste = ""
-
+data = ""
 def gen():
     global geste
     while True:

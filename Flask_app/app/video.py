@@ -1,8 +1,9 @@
+import pickle
 
-from tensorflow.keras.models import load_model
 import cv2
 import numpy as np
-import pickle
+from tensorflow.keras.models import load_model
+
 
 class Video:
     def __init__(self,camera):
@@ -12,10 +13,9 @@ class Video:
         self.size=(100,100,3)
 
         self.model = load_model('model1.h5')
-
         self.lookup = pickle.load(open("lookup.pickle", "rb"))
 
-        self.resize=True
+        self.resize = False
 
         self.camera = camera
         self.carre = self.crop_current_image()
