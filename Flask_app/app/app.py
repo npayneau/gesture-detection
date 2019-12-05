@@ -2,17 +2,21 @@ from flask import Flask, render_template, url_for, Response
 from video import Video
 
 app = Flask(__name__)
-vid=Video()
+vid=Video(0)
+
+geste = ""
+
 
 def gen():
+    global geste
     while True:
-        frame = vid.get_frame()
+        frame, geste = vid.get_frame()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 @app.route('/')
 def video():
-    return render_template('index.html')
+    return render_template('index.html',geste = geste)
 
 @app.route('/pptDisplay')
 def ppt():
@@ -24,4 +28,4 @@ def video_feed():
         mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(debug=False, port=8080)
