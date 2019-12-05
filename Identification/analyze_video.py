@@ -22,7 +22,7 @@ lookup = pickle.load(open("lookup.pickle", "rb"))
 
 resize=True
 
-camera=0
+camera=1
 #%% Cropping the image
 
 yA,yB,xA,xB = cim.crop_current_image(camera, resize)
