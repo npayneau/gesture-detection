@@ -73,5 +73,5 @@ class Dataset():
         x_train,x_further,y_train,y_further = train_test_split(self.X_data,self.Y_data,test_size = 0.1)
         x_dev,x_test,y_dev,y_test = train_test_split(x_further,y_further,test_size = 0.5)
         return(x_train,x_test,x_dev,y_train,y_test,y_dev)
-
-
+    def add(self,images,geste):
+        return(None)

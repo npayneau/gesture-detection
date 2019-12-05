@@ -13,4 +13,5 @@ data = {'sender':   'Alice',
     'message':  'We did it!'}
 data_json = simplejson.dumps(data)
 payload = {'json_payload': data_json}
-r = requests.post("http://localhost:8000", json=payload)
+r = requests.post("http://localhost:8080/data", json="data_json")
+r.json()

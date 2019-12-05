@@ -1,11 +1,10 @@
-from flask import Flask, render_template, url_for, Response
+from flask import Flask, render_template, url_for, Response,request
 from video import Video
 
 app = Flask(__name__)
 vid=Video(0)
 
 geste = ""
-
 
 def gen():
     global geste
@@ -26,6 +25,15 @@ def ppt():
 def video_feed():
     return Response(gen(),
         mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/data',methods=['GET','POST'])
+def data():
+    global data
+    if request.method=='POST':
+        data=request
+        return(request)
+    if request.method=='GET':
+        return(data)
 
 if __name__ == '__main__':
     app.run(debug=False, port=8080)
