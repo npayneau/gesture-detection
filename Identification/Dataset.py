@@ -23,7 +23,7 @@ class Dataset():
         self.X_data=[]
         self.Y_data=[]
         return(None)
-    def load(self,data_path="Dataset",charge=1,maxpardossier=1000)
+    def load(self,data_path="Dataset2",charge=1,maxpardossier=1000)
         self.data_source=data_path
         self.charge=charge
         self.maxpardossier=maxpardossier
