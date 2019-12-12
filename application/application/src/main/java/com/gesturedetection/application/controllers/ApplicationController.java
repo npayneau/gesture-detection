@@ -13,7 +13,6 @@ import java.util.List;
 
 
 import com.gesturedetection.application.services.GesteService;
-import com.gesturedetection.application.services.PTTService;
 
 
 @RestController
