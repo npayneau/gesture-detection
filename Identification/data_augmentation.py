@@ -9,7 +9,7 @@ import cv2
 
 # Parameters
 current_path=os.getcwd()
-data_source = os.path.join(current_path, "Dataset")
+data_source = os.path.join(current_path, "Dataset2")
 charge = 1
 di=int(1/charge)
 nbmaximagespardossier=10
@@ -40,3 +40,4 @@ def data_augmentation():
                 cv2.imwrite(os.path.join(current_path, str(time.time())+'.jpg'),img=image)
 
 data_augmentation()
+datagen.flow_fro

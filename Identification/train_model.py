@@ -59,7 +59,7 @@ if not os.path.exists('model.h5'):
     configuration = model.summary()
 
 else:
-    model = load_model('model1.h5')
+    model = load_model('model4.h5')
 
 configuration = model.summary()
 

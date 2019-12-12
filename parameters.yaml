@@ -1,0 +1,24 @@
+sports:
+    - soccer
+    - football
+    - basketball
+    - cricket
+    - hockey
+    - table tennis
+
+countries:
+    - Pakistan
+    - USA
+    - India
+    - China
+    - Germany
+    - France
+    - Spain
+  
+apples: 
+    bananas:
+        - 20
+        - retetet
+    mangoes: 2
+    sfsf: fzz
+    
