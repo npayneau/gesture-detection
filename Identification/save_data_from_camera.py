@@ -22,6 +22,7 @@ yA, yB, xA, xB = cim.crop_current_image(camera, True)
 size = (100, 100, 3)
 lookup = pickle.load(open("lookup.pickle", "rb"))
 CATEGORIES = list(lookup.values())
+CATEGORIES = ['Pouce Haut']
 reverselookup = pickle.load(open("reverselookup.pickle", "rb"))
 current_path = os.getcwd()
 data_source = os.path.join(current_path, "Dataset")
@@ -72,5 +73,5 @@ def capture(camera=0, resize = False, temps_de_capture = 20):
 
 #%% Calling the function
 
-capture(camera, False, 20)
+capture(camera, True, 20)
 

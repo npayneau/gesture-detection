@@ -12,7 +12,7 @@ current_path=os.getcwd()
 data_source = os.path.join(current_path, "Dataset2")
 charge = 1
 di=int(1/charge)
-nbmaximagespardossier=10
+nbmaximagespardossier=1000
 
 def data_augmentation():
     for i in os.walk(data_source):
@@ -21,9 +21,9 @@ def data_augmentation():
             for j in fichiers:
                 # change the path to the current one
                 current_path = os.path.join(data_source, i[0])
-                current_path = os.path.join(current_path, j)
+                img_path = os.path.join(current_path, j)
                 # load the image
-                img = load_img(current_path)
+                img = cv2.imread(img_path, -1)
                 # convert to numpy array
                 data = img_to_array(img)
                 # expand dimension to one sample
@@ -32,12 +32,13 @@ def data_augmentation():
                 datagen = ImageDataGenerator(horizontal_flip=True)
                 # prepare iterator
                 it = datagen.flow(samples, batch_size=1)
-                # generate samples and plot
-                batch = it.next()
-                # convert the array into an image
-                image = batch[0].astype('uint8')
-                # save the image
-                cv2.imwrite(os.path.join(current_path, str(time.time())+'.jpg'),img=image)
+                for k in range(2):
+                    # generate samples
+                    batch = it.next()
+                    # convert the array into an image
+                    image = batch[0].astype('uint8')
+                    # save the image
+                    cv2.imwrite(os.path.join(current_path, 'cool'+str(time.time())+'.jpg'), img=image)
 
 data_augmentation()
 datagen.flow_fro
