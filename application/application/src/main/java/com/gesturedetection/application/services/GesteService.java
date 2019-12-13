@@ -91,16 +91,19 @@ public class GesteService {
 	  JavaRobotExample Robot = new JavaRobotExample();
 	  switch(geste) {
 	  case "Poing":
-	    Robot.type(KeyEvent.VK_ESCAPE);
+	    //Robot.type(KeyEvent.VK_ESCAPE);
 	    break;
 	  case "Doigt 1":
-		  Robot.type(KeyEvent.VK_KP_LEFT);
+		  Robot.type(KeyEvent.VK_KP_RIGHT);
 	    break;
 	  case "Main Ouverte":
 		  Robot.type(KeyEvent.VK_F5);
 		break;
 	  case "2 Doigts":
-		  Robot.type(KeyEvent.VK_KP_RIGHT);
+		  Robot.type(KeyEvent.VK_B);
+		break;
+	  case "Pouce Haut":
+		  Robot.type(KeyEvent.VK_KP_LEFT);
 		break;
 	  case "Rien":
 		  Robot.type(KeyEvent.VK_ESCAPE);
