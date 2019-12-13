@@ -1,5 +1,7 @@
 package com.gesturedetection.application.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,8 +31,8 @@ public class ApplicationController {
 		return "home";
 	}
 	
-	@RequestMapping("/getAPI")
-	public List<Object> getAPI(GesteService PTTFile) throws AWTException {
+	@GetMapping("/getAPI")
+	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
 		try {
 			PTTFile.startPTT("/Users/Theo/Downloads/Séance-3-2019.pptx");
 		} catch (IOException e) {
@@ -42,9 +44,11 @@ public class ApplicationController {
 		
 		PTTFile.DoGeste(PTTFile.getGeste());
 		
-		return Arrays.asList(
+		return new ResponseEntity<List<Object>>(
+				Arrays.asList(
 				PTTFile.getGeste(),
-				PTTFile.getPosition());
+				PTTFile.getPosition()),
+				HttpStatus.OK);
 		
 		
 		
