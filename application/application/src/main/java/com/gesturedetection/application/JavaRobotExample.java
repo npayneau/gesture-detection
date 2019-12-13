@@ -81,7 +81,7 @@ public class JavaRobotExample {
   
   public void type(int i)
   {
-    robot.delay(40);
+    robot.delay(4000);
     robot.keyPress(i);
     robot.keyRelease(i);
   }
@@ -94,7 +94,7 @@ public class JavaRobotExample {
       int code = b;
       // keycode only handles [A-Z] (which is ASCII decimal [65-90])
       if (code > 96 && code < 123) code = code - 32;
-      robot.delay(40);
+      robot.delay(4000);
       robot.keyPress(code);
       robot.keyRelease(code);
     }

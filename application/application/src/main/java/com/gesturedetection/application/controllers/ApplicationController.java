@@ -31,10 +31,10 @@ public class ApplicationController {
 		return "home";
 	}
 	
-	@GetMapping("/getAPI")
+	@PostMapping("/getAPI")
 	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
 		try {
-			PTTFile.startPTT("/Users/Theo/Downloads/Séance-3-2019.pptx");
+			PTTFile.startPTT("D:\\Jules\\Documents\\1.pptx");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
