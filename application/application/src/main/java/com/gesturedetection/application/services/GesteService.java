@@ -78,8 +78,8 @@ public class GesteService {
 		  Robot.type(KeyEvent.VK_KP_LEFT);
 		break;
 	  case "Rien":
-	  	  Robot.type(KeyEvent.VK_F5);
-		  Robot.type(KeyEvent.VK_ESCAPE);
+	  	  //Robot.type(KeyEvent.VK_F5);
+		  //Robot.type(KeyEvent.VK_ESCAPE);
 		break;
 	  default:
 	    // code block
