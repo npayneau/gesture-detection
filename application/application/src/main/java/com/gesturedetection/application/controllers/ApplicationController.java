@@ -23,7 +23,7 @@ public class ApplicationController {
 		return "welcom";
 	}
 	
-	@GetMapping("/")
+	@PostMapping("/")
 	public String HomePage() {
 		GesteService PTTFile = new GesteService();
 		try {
@@ -39,10 +39,9 @@ public class ApplicationController {
 	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
 		String new_geste = PTTFile.getGeste();
 		
-		if(!(new_geste.equals(this.prev_geste))) {
-			PTTFile.DoGeste(new_geste);
-			this.prev_geste = new_geste;
-		}
+		//if(!(new_geste.equals(this.prev_geste))) {}
+		PTTFile.DoGeste(new_geste);
+		this.prev_geste = new_geste;
 		
 		return new ResponseEntity<List<Object>>(
 				Arrays.asList(
