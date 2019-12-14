@@ -15,6 +15,8 @@ import com.gesturedetection.application.services.GesteService;
 @RestController
 public class ApplicationController {
 	
+	private String prev_geste;
+	
 
 	@GetMapping("/actions")
 	public String firstPage() {
@@ -25,7 +27,7 @@ public class ApplicationController {
 	public String HomePage() {
 		GesteService PTTFile = new GesteService();
 		try {
-			PTTFile.startPTT("D:\\Jules\\Documents\\1.pptx");
+			PTTFile.startPTT("/Users/Theo/Downloads/Séance-3-2019.pptx");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,10 +35,14 @@ public class ApplicationController {
 		return "home";
 	}
 	
-	@PostMapping("/getAPI")
+	@GetMapping("/getAPI")
 	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
+		String new_geste = PTTFile.getGeste();
 		
-		PTTFile.DoGeste(PTTFile.getGeste());
+		if(!(new_geste.equals(this.prev_geste))) {
+			PTTFile.DoGeste(new_geste);
+			this.prev_geste = new_geste;
+		}
 		
 		return new ResponseEntity<List<Object>>(
 				Arrays.asList(
