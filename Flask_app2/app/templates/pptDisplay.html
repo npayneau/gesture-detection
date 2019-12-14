@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Application PPT</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+  <div class="titre">
+    <h1> Reconnaissance Gestuelle</h1>
+    <p> Description Projet </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
+  <div class="block1">
+
+    <div class="video_box">
+      <h1>Affichage Flux Video</h1>
+      <div class="flux">
+        <img src="video_feed">
+      </div>
+      <div class="instructions">
+        <h1>Instructions</h1>
+        <p>instruction</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="block2">
+    <div class="PPT">
+      <h1> Affichage PowerPoint</h1>
+      <img id="affichagePpt" src="{{ url_for('static', filename='images/PPT_1.png') }}">
+      <div class="boutons">
+
+        <script src="{{ url_for('static', filename='script.js') }}" charset="utf-8"></script>
+        <button type="button" onclick="PreviousImage()">Previous</button>
+        <button type="button" onclick="NextImage()">Next</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

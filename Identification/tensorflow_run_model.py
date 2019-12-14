@@ -22,7 +22,6 @@ y_test = pickle.load(open("y_test.pickle", "rb"))
 # identical to the previous one
 model = load_model('modelCNN.h5')
 
-
 dev_loss, dev_acc = model.evaluate(X_dev, y_dev, verbose = 0)
 
 test_loss, test_acc = model.evaluate(X_test, y_test, verbose = 0)

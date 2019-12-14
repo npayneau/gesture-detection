@@ -4,6 +4,9 @@
 # Log file
 *.log
 
+#Data savings
+*.pickle
+
 # BlueJ files
 *.ctxt
 
@@ -26,3 +29,11 @@ hs_err_pid*
 .idea/workspace.xml
 .DS_Store
 /.metadata/
+Identification/CNN.py
+Identification/~$PEE.pptx
+Identification/lookup.pickle
+Identification/reverselookup.pickle
+Identification/reverselookup.pickle
+Identification/lookup.pickle
+*.pickle
+.spyproject

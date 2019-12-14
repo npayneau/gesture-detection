@@ -29,14 +29,14 @@ public class ApplicationController {
 	@GetMapping("/")
 	public String HomePage() {
 		GesteService PTTFile = new GesteService();
-		try {
-			PTTFile.startPTT("/Users/Theo/Downloads/Séance-3-2019.pptx");
+    try {
+			PTTFile.startPTT("D:\\Jules\\Documents\\1.pptx");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return "home";
 	}
-	
+
 	@GetMapping("/getAPI")
 	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
 		

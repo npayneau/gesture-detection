@@ -244,7 +244,7 @@ history=model.fit(x_train, y_train, epochs=1, batch_size=30, verbose=1, validati
 #now = datetime.now()
 #now = now.strftime("%D"+"  %Hh%Mm%Ss").replace('/','-')
 model.save('model1.h5')
-plothistory(history)
+# plothistory(history)
 #print('ok')
 
 #%% Test on real time
