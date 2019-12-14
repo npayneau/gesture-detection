@@ -20,7 +20,7 @@ class Video:
         self.model = cnnmodel
         if carre is None:
             self.carre = self.crop()
-            print(carre)
+            #print(carre)
         else:
             self.carre = carre
 
@@ -47,7 +47,7 @@ class Video:
                 geste = self.model.predict(img)
                 if post:
                     ancien_geste, last_acted = self.post_geste(geste, ancien_geste, last_acted)
-                print(geste)
+                #print(geste)
                 img_affichee = img
                 img_affichee = cv2.resize(img_affichee, (800, 700))  # Affichage pixelisé de l'image
                 # cv2.putText(img_affichee, geste, (self.size[0], self.size[1]), 0, 2, (255, 0, 255), 2)
@@ -81,7 +81,7 @@ class Video:
 
                 geste = self.model.predict(img)
                 images.append(img)
-                print(geste)
+                #print(geste)
                 img_affichee = img
                 img_affichee = cv2.resize(img_affichee, (800, 700))  # Affichage pixelisé de l'image
                 # cv2.putText(img_affichee, geste, (self.size[0], self.size[1]), 0, 2, (255, 0, 255), 2)
@@ -96,9 +96,10 @@ class Video:
         return (images)
 
     def post_geste(self, nouveau_geste, ancien_geste, last_acted):
-        if time.time() - last_acted > 1 or ancien_geste == "Rien" or nouveau_geste == "Rien":
+        if ancien_geste!=nouveau_geste and (time.time() - last_acted > 1 or ancien_geste == "Rien" or nouveau_geste == "Rien"):
             r = requests.post('http://localhost:8090/getAPI', data={'geste': nouveau_geste, 'position': '0123'})
             last_acted = time.time()
+            print(nouveau_geste)
             return (nouveau_geste, last_acted)
         else:
             return (ancien_geste, last_acted)

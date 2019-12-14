@@ -1,3 +1,5 @@
+import time
+
 import requests
 from flask import Flask, render_template, Response, request
 
@@ -18,14 +20,26 @@ vid = Video(cnnmodel=model, camera=camera, resize=resize)
 
 geste = ""
 data = ""
+ancien_geste = ""
+last_acted = time.time()
+
+
+def post_geste(nouveau_geste, ancien_geste, last_acted):
+    if  time.time() - last_acted > 2 or ancien_geste == "Rien" or nouveau_geste == "Rien":
+        r = requests.post('http://localhost:8090/getAPI', data={'geste': nouveau_geste, 'position': '0123'})
+        last_acted = time.time()
+        print(nouveau_geste)
+        return (nouveau_geste, last_acted)
+    else:
+        return (ancien_geste, last_acted)
 
 
 def gen():
-    global geste
+    global geste, ancien_geste, last_acted
     while True:
         frame, geste = vid.get_frame()
-        print(geste)
-        r = requests.post('http://localhost:8090/getAPI', data={'geste': geste, 'position': '0123'})
+        #print(geste)
+        ancien_geste, last_acted = post_geste(geste, ancien_geste, last_acted)
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
