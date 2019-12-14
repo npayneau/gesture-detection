@@ -1,24 +1,24 @@
 package com.gesturedetection.application.controllers;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.servlet.ModelAndView;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-
 import java.awt.AWTException;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
 
 import com.gesturedetection.application.services.GesteService;
 
-
+//@Service
 @RestController
 public class ApplicationController {
+	
+	//@Value("#{file.to.open}")
+	//private String path;
 	
 
 	@GetMapping("/actions")
@@ -28,17 +28,17 @@ public class ApplicationController {
 	
 	@GetMapping("/")
 	public String HomePage() {
-		return "home";
-	}
-	
-	@PostMapping("/getAPI")
-	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
-		try {
+		GesteService PTTFile = new GesteService();
+    try {
 			PTTFile.startPTT("D:\\Jules\\Documents\\1.pptx");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return "home";
+	}
+
+	@GetMapping("/getAPI")
+	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
 		
 		//PTTService PTT = new PTTService();
 		
