@@ -13,12 +13,12 @@ import java.util.List;
 
 import com.gesturedetection.application.services.GesteService;
 
-@Service
+//@Service
 @RestController
 public class ApplicationController {
 	
-	@Value("#{file.to.open}")
-	private String path;
+	//@Value("#{file.to.open}")
+	//private String path;
 	
 
 	@GetMapping("/actions")
@@ -28,16 +28,17 @@ public class ApplicationController {
 	
 	@GetMapping("/")
 	public String HomePage() {
+		GesteService PTTFile = new GesteService();
+		try {
+			PTTFile.startPTT("/Users/Theo/Downloads/Séance-3-2019.pptx");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return "home";
 	}
 	
 	@GetMapping("/getAPI")
 	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
-		try {
-			PTTFile.startPTT(path);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		
 		//PTTService PTT = new PTTService();
 		
