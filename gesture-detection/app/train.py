@@ -20,6 +20,7 @@ dataset.load(dataset_name=dataset_name, charge=charge, maxpardossier=maxpardossi
 
 # %% Training on model
 model = CnnModel(model_name=model_name, size=size)
+model.train()
 model.save(model_name="model222")
 
 # %% Showing results
