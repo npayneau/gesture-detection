@@ -39,7 +39,6 @@ public class ApplicationController {
 	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
 		String new_geste = PTTFile.getGeste();
 		
-		//if(!(new_geste.equals(this.prev_geste))) {}
 		PTTFile.DoGeste(new_geste);
 		this.prev_geste = new_geste;
 		
