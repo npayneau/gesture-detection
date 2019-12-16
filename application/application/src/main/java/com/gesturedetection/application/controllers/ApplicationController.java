@@ -23,7 +23,7 @@ public class ApplicationController {
 		return "welcom";
 	}
 	
-	@PostMapping("/")
+	@GetMapping("/")
 	public String HomePage() {
 		GesteService PTTFile = new GesteService();
 		try {
