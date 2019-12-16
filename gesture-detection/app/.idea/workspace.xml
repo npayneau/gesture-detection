@@ -15,6 +15,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/modules/Video.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/train.py" root0="SKIP_INSPECTION" />
@@ -51,6 +54,9 @@
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -114,6 +120,9 @@
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="C:\Anaconda\envs\perso\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -176,11 +185,11 @@
     </configuration>
     <list>
       <item itemvalue="Flask server.app" />
+      <item itemvalue="Flask server.Flask" />
       <item itemvalue="Flask server.Gesture-detection" />
       <item itemvalue="Python.Video" />
       <item itemvalue="Python.train" />
       <item itemvalue="Python.Dataset" />
-      <item itemvalue="Flask server.Flask" />
       <item itemvalue="Python.run_model" />
     </list>
     <recent_temporary>
