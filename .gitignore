@@ -4,9 +4,6 @@
 # Log file
 *.log
 
-#Data savings
-*.pickle
-
 # BlueJ files
 *.ctxt
 
