@@ -26,7 +26,6 @@ public class GesteService {
   }
   
   public String getGeste() {
-	  //System.out.println(geste);
 	  return geste;
   }
   
