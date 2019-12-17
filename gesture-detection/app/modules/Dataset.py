@@ -27,12 +27,11 @@ class Dataset:
         self.batchiterator = None
         self.batchsize = batchsize
 
-    def compile(self, **kwargs):
+    def compile(self, datagen = ImageDataGenerator()):
         """
-        Créée un itérateur sur l'ensemble des images du dataset.
+        Créée un itérateur sur l'ensemble des images du dataset, se donnant un ImageDataGenerator (from keras.preprocessing.image import ImageDataGenerator).
         :param kwargs: spécification des options de ImageDataGenerator
         """
-        datagen = ImageDataGenerator(**kwargs)
         iterator = datagen.flow_from_dataframe(self.dataframe, x_col="chemin", y_col="nom_geste",
                                                batch_size=self.batchsize,
                                                target_size=(self.size[0], self.size[1]))
@@ -90,3 +89,8 @@ class Dataset:
             cv2.imwrite(os.path.join(destination, str(i) + '.jpg'), img=images[i])
         self.reload()
         return (None)
+
+    def save_excel(self, name=''):
+        if name=="":
+            name=os.path.split(self.path)[1]
+        self.dataframe.to_excel(os.path.join(self.path, name+'.xlsx'))

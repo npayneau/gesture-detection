@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="604387a1-4f83-446d-9072-21dfe07b8d1f" name="Default Changelist" comment="" />
+    <list default="true" id="604387a1-4f83-446d-9072-21dfe07b8d1f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/lookup.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/model1-lookup.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/model1.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/model111-lookup.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/model111.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/model2.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/model222-lookup.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/model222.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/modeltest.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/models/modeltest2.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/Dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,15 +34,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/modules/Video.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/train.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/modules/Dataset.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/modules/CnnModel.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/modules/Video.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1Uw2TNwMWdbObgM9carahmPlDl4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="yaml" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -49,14 +66,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_model">
+  <component name="RunManager" selected="Python.train">
     <configuration name="Dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -120,12 +134,9 @@
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Anaconda\envs\perso\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -194,11 +205,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run_model" />
-        <item itemvalue="Flask server.Gesture-detection" />
-        <item itemvalue="Flask server.Flask" />
+        <item itemvalue="Python.train" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.Dataset" />
+        <item itemvalue="Python.run_model" />
+        <item itemvalue="Flask server.Gesture-detection" />
       </list>
     </recent_temporary>
   </component>
@@ -215,16 +226,41 @@
       <workItem from="1576253349577" duration="2148000" />
       <workItem from="1576312585435" duration="1549000" />
       <workItem from="1576314484148" duration="22782000" />
+      <workItem from="1576506019070" duration="661000" />
+      <workItem from="1576573333826" duration="3109000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/app$train.coverage" NAME="train Coverage Results" MODIFIED="1576320484927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/app$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1576323575552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/app$Flask__1_.coverage" NAME="Gesture-detection Coverage Results" MODIFIED="1576335539734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/app$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1576506542879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1576323964932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/app$run_model.coverage" NAME="run_model Coverage Results" MODIFIED="1576337169636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$analyze_video.coverage" NAME="analyze_video Coverage Results" MODIFIED="1576313555132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../GitHub/gesture-detection/Identification" />
