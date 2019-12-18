@@ -30,6 +30,13 @@ body{
 	padding: 10px;
 	box-sizing: border-box;
 }
+.block1video{
+	float: left;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
 
 .block2{
 	float: left;

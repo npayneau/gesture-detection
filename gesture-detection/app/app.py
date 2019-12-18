@@ -54,6 +54,10 @@ def gen():
 def video():
     return render_template('index.html', geste=geste)
 
+@app.route('/video')
+def pagevideo():
+    return render_template('video.html', geste=geste)
+
 
 @app.route('/pptDisplay')
 def ppt():
