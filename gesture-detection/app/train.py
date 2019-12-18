@@ -8,7 +8,7 @@ from modules.Video import Video
 camera = 0
 resize = False
 model_name = "model"
-dataset_name = "Dataset2"
+dataset_name = "Dataset"
 size = (100, 100, 3)
 maxpardossier = 100
 charge = 1
