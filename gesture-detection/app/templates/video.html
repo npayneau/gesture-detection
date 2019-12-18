@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Application Base</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+  <div class="titre">
+    <h1> Reconnaissance Gestuelle</h1>
+    <p> Description Projet </p>
+    <p> Machine learning dans le but de déclencher des événements</p>
+  </div>
+
+  <div class="block1video">
+
+    <div class="video_box">
+      <h1>Affichage Flux Video</h1>
+      <div class="flux">
+        <img src="video_feed">
+      </div>
+      <div class="instructions">
+        <h1>Instructions</h1>
+
+        <p id="geste1">{{geste}}</p>
+      </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+{% endblock %}
