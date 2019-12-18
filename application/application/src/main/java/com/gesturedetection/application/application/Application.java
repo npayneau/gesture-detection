@@ -1,7 +1,11 @@
-package com.gesturedetection.application;
+package com.gesturedetection.application.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+//*************************************************************//
+//       Classe de lancement du serveur Spring Boot            //
+//*************************************************************//
 
 @SpringBootApplication
 public class Application {
