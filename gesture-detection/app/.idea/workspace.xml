@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="604387a1-4f83-446d-9072-21dfe07b8d1f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/CnnModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/CnnModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +222,8 @@
       <workItem from="1576314484148" duration="22782000" />
       <workItem from="1576506019070" duration="661000" />
       <workItem from="1576573333826" duration="3161000" />
-      <workItem from="1576660250602" duration="244000" />
+      <workItem from="1576660250602" duration="529000" />
+      <workItem from="1576661974896" duration="43000" />
     </task>
     <servers />
   </component>
