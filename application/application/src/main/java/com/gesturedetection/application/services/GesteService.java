@@ -6,11 +6,7 @@ import java.awt.AWTException;
 import java.awt.Desktop;
 import java.awt.event.KeyEvent;
 
-
-//****************************************************************//
-//    Classe créant l'object geste passé au controleur Java       //
-//****************************************************************//
-
+import com.gesturedetection.application.JavaRobotExample;
 
 public class GesteService {
 
@@ -22,38 +18,26 @@ public class GesteService {
     this.position = position;
   }
 
-  public GesteService() {}  			// Constructeur
+  public GesteService() {}
   
-  //--------------------------------------------//
-  //        Modifie le geste de l'objet        	//
-  //--------------------------------------------//
+  
   public void setGeste(String geste) {
 	  this.geste = geste;
   }
   
-  //--------------------------------------------//
-  //        Renvoie le geste de l'objet        	//
-  //--------------------------------------------//
   public String getGeste() {
 	  return geste;
   }
-  //------------------------------------------------//
-  //        Modifie la position de l'objet        	//
-  //------------------------------------------------//
+  
   public void setPosition(String position) {
 	  this.position = position;
   }
   
-  //------------------------------------------------//
-  //        Renvoie la position de l'objet        	//
-  //------------------------------------------------//
   public String getPosition() {
 	  return position;
   }
   
-  //------------------------------------------------//
-  //        Lance le fichier PowerPoint          	//
-  //------------------------------------------------//
+  
   public void startPTT(String nameFile) throws IOException {
 	  
 	  File file = new File(nameFile);
@@ -68,18 +52,14 @@ public class GesteService {
       
       }
   }
-  
-  // Propriété indispensable au bon fonctionnement de la classe Robot
   static {
+
       System.setProperty("java.awt.headless", "false");
   }
   
-  //------------------------------------------------------------//
-  //        Choix de l'action en fonction du geste          	//
-  //------------------------------------------------------------//
   public void DoGeste(String geste) throws AWTException {
       System.out.println(geste);
-	  JavaRobotPPT Robot = new JavaRobotPPT();
+	  JavaRobotExample Robot = new JavaRobotExample();
 	  switch(geste) {
 	  case "Poing":
 	    //Robot.type(KeyEvent.VK_ESCAPE);
