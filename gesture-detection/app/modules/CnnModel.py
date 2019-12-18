@@ -11,12 +11,12 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from tensorflow import get_default_graph
-from tensorflow import global_variables_initializer
+#from tensorflow.keras.backend import import get_default_graph
+#from tensorflow import global_variables_initializer
 from tensorflow.keras import layers
 from tensorflow.keras import models
-from tensorflow.keras.backend import get_session
-from tensorflow.keras.backend import set_session
+#from tensorflow.keras.backend import get_session
+#from tensorflow.keras.backend import set_session
 from tensorflow.keras.models import load_model
 from tensorflow.keras.models import save_model
 
@@ -37,15 +37,15 @@ class CnnModel:
         # Chaque modèle a un fichier -lookup.pickle associé
         self.lookup = pd.read_pickle(os.path.join(models_directory, model_name + "-lookup.pickle"))
         # On sauvegarde la session, le graphe et les paramètres globaux de tensorflow afin de supprimer les conflits entre flask et tensorflow sous windows
-        self.session = get_session()
-        init = global_variables_initializer()
-        self.session.run(init)
+        #self.session = get_session()
+        #init = global_variables_initializer()
+        #self.session.run(init)
         # Chargement/ Création du modèle s'il est vide
         if model_name == "":
             self.construct_model()
         else:
             self.model = load_model(os.path.join(models_directory, model_name + ".h5"))
-        self.graph = get_default_graph()
+        #self.graph = get_default_graph()
 
     def construct_model(self):
         """
@@ -107,9 +107,9 @@ class CnnModel:
         img = cv2.resize(np.array(image), (self.size[0], self.size[1]))
         img = np.array(img)
         img = img * 1.0 / 255
-        with self.graph.as_default():
-            set_session(self.session)
-            predictions = self.model.predict(img.reshape((1, self.size[0], self.size[1], self.size[2])))
+        #with self.graph.as_default():
+            #set_session(self.session)
+        predictions = self.model.predict(img.reshape((1, self.size[0], self.size[1], self.size[2])))
         geste = self.lookup[np.argmax(predictions[0])]
         return (geste)
 
