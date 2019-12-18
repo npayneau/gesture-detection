@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="604387a1-4f83-446d-9072-21dfe07b8d1f" name="Default Changelist" comment="" />
+    <list default="true" id="604387a1-4f83-446d-9072-21dfe07b8d1f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="yaml" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
@@ -219,7 +221,7 @@
       <workItem from="1576314484148" duration="22782000" />
       <workItem from="1576506019070" duration="661000" />
       <workItem from="1576573333826" duration="3161000" />
-      <workItem from="1576671302475" duration="3791000" />
+      <workItem from="1576671302475" duration="3148000" />
     </task>
     <servers />
   </component>
