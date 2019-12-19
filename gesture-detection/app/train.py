@@ -19,7 +19,7 @@ epochs = 10
 dataset = Dataset(size=size, batchsize=batchsize)
 dataset.load(dataset_name=dataset_name, charge=charge, maxpardossier=maxpardossier)
 # Now that the folders are loaded, you can apply images preprocessing shifts and transformations with the ImageDataGenerator:
-imagen = ImageDataGenerator(horizontal_flip=True)
+imagen = ImageDataGenerator(vertical_flip=True)
 # You can also save a tree copy of the dataset in an excel file
 dataset.save_excel()
 
