@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="604387a1-4f83-446d-9072-21dfe07b8d1f" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/datasets/Dataset2/Dataset2.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/datasets/Dataset2/Dataset2.xlsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/JavaRobotExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/JavaRobotExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/controllers/ApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/controllers/ApplicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/services/GesteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/services/GesteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/services/PTTService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/main/java/com/gesturedetection/application/services/Raccourcis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../application/application/bin/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/bin/src/test/java/com/gesturedetection/application/ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../application/application/bin/src/test/java/com/gesturedetection/application/ApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../application/application/src/main/java/com/gesturedetection/application/controllers/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../application/application/src/main/java/com/gesturedetection/application/controllers/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +42,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/train.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/modules/Dataset.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/modules/CnnModel.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/modules/CnnModel.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/modules/Video.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1Uw2TNwMWdbObgM9carahmPlDl4" />
@@ -56,7 +72,11 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Flask server.Flask">
+=======
+  <component name="RunManager" selected="Flask server.app">
+>>>>>>> Stashed changes
     <configuration name="Dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,6 +147,9 @@
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -221,6 +244,9 @@
       <workItem from="1576314484148" duration="22782000" />
       <workItem from="1576506019070" duration="661000" />
       <workItem from="1576573333826" duration="3161000" />
+      <workItem from="1576665543856" duration="449000" />
+      <workItem from="1576666277888" duration="905000" />
+      <workItem from="1576667346538" duration="3210000" />
     </task>
     <servers />
   </component>
@@ -251,11 +277,16 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/app$train.coverage" NAME="train Coverage Results" MODIFIED="1576320484927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$Flask__1_.coverage" NAME="Gesture-detection Coverage Results" MODIFIED="1576335539734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+<<<<<<< Updated upstream
     <SUITE FILE_PATH="coverage/app$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1576662272392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1576323964932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+=======
+    <SUITE FILE_PATH="coverage/app$app.coverage" NAME="app Coverage Results" MODIFIED="1576669839376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+>>>>>>> Stashed changes
     <SUITE FILE_PATH="coverage/app$run_model.coverage" NAME="run_model Coverage Results" MODIFIED="1576337169636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app$train.coverage" NAME="train Coverage Results" MODIFIED="1576320484927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/app$analyze_video.coverage" NAME="analyze_video Coverage Results" MODIFIED="1576313555132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../GitHub/gesture-detection/Identification" />
+    <SUITE FILE_PATH="coverage/app$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1576506542879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
