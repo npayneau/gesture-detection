@@ -11,18 +11,18 @@ import java.util.List;
 
 import com.gesturedetection.application.services.GesteService;
 
-//*********************************************//
-//        Controleur de l'application          //
-//*********************************************//
 
 @RestController
 public class ApplicationController {
 	
-	private String prev_geste;  // Stockage du précédent 
+	private String prev_geste;
 	
-	//------------------------------------------------------//
-    //           Chemin de lancement du PPT                 //
-    //------------------------------------------------------//
+
+	@GetMapping("/actions")
+	public String firstPage() {
+		return "welcom";
+	}
+	
 	@GetMapping("/")
 	public String HomePage() {
 		GesteService PTTFile = new GesteService();
@@ -35,24 +35,14 @@ public class ApplicationController {
 		return "home";
 	}
 	
-	//------------------------------------------------------//
-    //           Chemin de reception du geste               //
-	//														//
-	// Parametre :											//
-	// 		Object GesteService : object contenant le nom 	//
-	//				du geste à effectué et diverses 		//
-	//				autres composants						//
-	//														//
-    //------------------------------------------------------//
 	@PostMapping("/getAPI")
 	public @ResponseBody ResponseEntity<List<Object>> getAPI(GesteService PTTFile) throws AWTException {
+		String new_geste = PTTFile.getGeste();
 		
-		String new_geste = PTTFile.getGeste();     	// Extraction du nom du geste dans une variable
-		
-		PTTFile.DoGeste(new_geste);					// Effectue le geste dans le module 
+		PTTFile.DoGeste(new_geste);
 		this.prev_geste = new_geste;
 		
-		return new ResponseEntity<List<Object>>(	// Affiche quelques composantes du l'Object receptionné sur une page web
+		return new ResponseEntity<List<Object>>(
 				Arrays.asList(
 				PTTFile.getGeste(),
 				PTTFile.getPosition()),
