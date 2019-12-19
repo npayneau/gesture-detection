@@ -7,7 +7,8 @@ from modules.CnnModel import CnnModel
 from modules.Video import Video
 
 # %% Parameters
-camera = 0
+camera = 1
+
 resize = False
 model_name = "model"
 size = (100, 100, 3)

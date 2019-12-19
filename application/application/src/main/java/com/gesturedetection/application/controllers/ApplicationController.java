@@ -27,7 +27,7 @@ public class ApplicationController {
 	public String HomePage() {
 		GesteService PTTFile = new GesteService();
 		try {
-			PTTFile.startPTT("D:\\Jules\\Documents\\GitHub\\gesture-detection\\gesture-detection\\app\\data\\PEE.pptx");
+			PTTFile.startPTT("C:\\Kevin\\IMTA\\neuronal\\gesture-detection\\gesture-detection\\app\\data\\PEE.pptx");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

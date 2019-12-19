@@ -86,7 +86,7 @@ public class GesteService {
 	    break;
 	  case "Doigt 1":
 		  //Robot.type(KeyEvent.VK_F5);
-		  Robot.type(KeyEvent.VK_N);
+		  Robot.type(KeyEvent.VK_RIGHT);
 	    break;
 	  case "Main Ouverte":
 		  Robot.type(KeyEvent.VK_F5);
@@ -97,7 +97,7 @@ public class GesteService {
 		break;
 	  case "Pouce Haut":
 		  //Robot.type(KeyEvent.VK_F5);
-		  Robot.type(KeyEvent.VK_P);
+		  Robot.type(KeyEvent.VK_LEFT);
 		break;
 	  case "Rien":
 	  	  //Robot.type(KeyEvent.VK_F5);
