@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a17920fd-cd20-4aa3-a063-c86aa6daead2" name="Default Changelist" comment="" />
+    <list default="true" id="a17920fd-cd20-4aa3-a063-c86aa6daead2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/application/src/main/java/com/gesturedetection/application/services/GesteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/application/src/main/java/com/gesturedetection/application/services/GesteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gesture-detection/app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gesture-detection/app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gesture-detection/app/modules/Video.py" beforeDir="false" afterPath="$PROJECT_DIR$/gesture-detection/app/modules/Video.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +21,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/application" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -47,6 +52,8 @@
       <workItem from="1575572089273" duration="980000" />
       <workItem from="1576153513263" duration="127000" />
       <workItem from="1576252663835" duration="12000" />
+      <workItem from="1579525944870" duration="1288000" />
+      <workItem from="1579618347345" duration="192000" />
     </task>
     <servers />
   </component>

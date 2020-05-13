@@ -21,7 +21,7 @@ dataset.load(dataset_name=dataset_name, charge=charge, maxpardossier=maxpardossi
 # Now that the folders are loaded, you can apply images preprocessing shifts and transformations with the ImageDataGenerator:
 imagen = ImageDataGenerator(vertical_flip=True)
 # You can also save a tree copy of the dataset in an excel file
-dataset.save_excel()
+# dataset.save_excel()
 
 # %% Training on model
 # Creating a model
@@ -31,7 +31,7 @@ batchiterator = dataset.compile()
 # Training
 model.train(batchiterator, epochs=epochs)
 # Saving the new model into a copy (if you have written on another model, you can still get it from the backups directory)
-model.save(model_name="final_model")
+model.save(model_name="model")
 
 # %% Showing results
 video = Video(cnnmodel=model, camera=camera, resize=resize)

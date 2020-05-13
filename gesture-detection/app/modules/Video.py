@@ -167,7 +167,7 @@ class Video:
         # geste="Main Ouverte"
         img_affichee = img
         img_affichee = cv2.resize(img_affichee, (800, 700))
-        # cv2.putText(img_affichee, geste, (100,100), 0, 2, (255, 0, 255), 2)
+        cv2.putText(img_affichee, geste, (100,100), 0, 2, (255, 0, 255), 2)
         ancien_geste = geste
         # api.act(ancien_geste,geste,controller)
         ret, jpeg = cv2.imencode('.jpg', img_affichee)
