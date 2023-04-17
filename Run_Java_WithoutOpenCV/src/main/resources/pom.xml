@@ -11,7 +11,7 @@
 		<dependency>
    			<groupId>org.springframework</groupId>
     		<artifactId>spring-core</artifactId>
-    		<version>5.2.0.RELEASE</version>
+    		<version>5.2.24.RELEASE</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.deeplearning4j/deeplearning4j-core -->
 		<dependency>
